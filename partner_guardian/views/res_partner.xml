@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form - partner_guardian</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="lang" position="after">
+                <field name="birth_date"/>
+                <field name="guardian" attrs="{'required': [('is_underage', '=', True)]}"/>
+                <field name="is_underage" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,40 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_guardian
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-09 11:10+0000\n"
+"PO-Revision-Date: 2018-09-09 11:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_guardian
+#: model:ir.model.fields,field_description:partner_guardian.field_res_partner_birth_date
+#: model:ir.model.fields,field_description:partner_guardian.field_res_users_birth_date
+msgid "Birthdate"
+msgstr ""
+
+#. module: partner_guardian
+#: model:ir.model,name:partner_guardian.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: partner_guardian
+#: model:ir.model.fields,field_description:partner_guardian.field_res_partner_guardian
+#: model:ir.model.fields,field_description:partner_guardian.field_res_users_guardian
+msgid "Guardian"
+msgstr ""
+
+#. module: partner_guardian
+#: model:ir.model.fields,field_description:partner_guardian.field_res_partner_is_underage
+#: model:ir.model.fields,field_description:partner_guardian.field_res_users_is_underage
+msgid "Is Under-Age?"
+msgstr ""
+

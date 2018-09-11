@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form - asp_membership</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!--Contacts adresses-->
+            <xpath expr="//page[1]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <!--Internal notes-->
+            <xpath expr="//page[2]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <field name="category_id" position="after">
+                <field name="comment" placeholder="Internal note..."/>
+            </field>
+            <!--Sales and purchases-->
+            <xpath expr="//page[3]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <!--Invoicing-->
+            <xpath expr="//page[4]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <field name="category_id" position="after">
+                <field name="iban"/>
+                <field name="centre_id"/>
+            </field>
+            <field name="function" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="lang" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>

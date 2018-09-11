@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_membership_line_tree" model="ir.ui.view">
+        <field name="name">membership.membership_line.tree</field>
+        <field name="model">membership.membership_line</field>
+        <field name="arch" type="xml">
+            <tree string="Memberships">
+                <field name="partner" string="Member"/>
+                <field name="centre_id"/>
+                <field name="category_id"/>
+                <field name="membership_id"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="member_price"/>
+                <field name="date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_membership_line_form" model="ir.ui.view">
+        <field name="name">membership.membership_line.form</field>
+        <field name="model">membership.membership_line</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="partner" string="Member"/>
+                        <field name="centre_id"/>
+                        <field name="category_id"/>
+                        <field name="date"/>
+                        <field name="date_cancel"/>
+                        <field name="state"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                    </group>
+                    <group>
+                        <field name="membership_id"/>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="member_price"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_membership_line_search" model="ir.ui.view">
+        <field name="name">membership.membership_line.search</field>
+        <field name="model">membership.membership_line</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="partner" string="Member"/>
+                <field name="centre_id"/>
+                <field name="category_id"/>
+                <field name="membership_id"/>
+                <field name="state"/>
+                <filter string="To Pay" name="to_pay" domain="[('state','not in',['paid', 'canceled', 'old'])]"/>
+                <filter string="Partner" domain="[]" context="{'group_by':'partner'}"/>
+                <filter string="Membership Status" domain="[]" context="{'group_by':'state'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_membership_line_pivot" model="ir.ui.view">
+        <field name="name">membership.membership_line.pivot</field>
+        <field name="model">membership.membership_line</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="partner" type="row"/>
+                <field name="membership_id" type="col"/>
+                <field name="member_price" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_membership_lines">
+        <field name="name">Membership Lines</field>
+        <field name="res_model">membership.membership_line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,pivot</field>
+    </record>
+
+    <menuitem name="Membership Lines"
+              id="menu_membership_lines"
+              parent="membership.menu_association"
+              sequence="50"
+              action="action_membership_lines"/>
+
+</odoo>

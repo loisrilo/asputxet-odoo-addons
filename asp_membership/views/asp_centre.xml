@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_asp_centre_tree" model="ir.ui.view">
+        <field name="name">asp.centre.tree</field>
+        <field name="model">asp.centre</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_asp_centre">
+        <field name="name">Centres</field>
+        <field name="res_model">asp.centre</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem name="Centres"
+          id="menu_asp_centre"
+          parent="membership.menu_marketing_config_association"
+          sequence="110"
+          action="action_asp_centre"/>
+
+</odoo>
